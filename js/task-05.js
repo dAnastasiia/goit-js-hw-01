@@ -1,4 +1,4 @@
-const countryName = null;
+const countryName = "КитаЙ";
 
 const CANCELED_BY_USER = 'Отменено пользователем!';
 const NO_DELIVERY = 'В выбранную страну доставка недоступна.';
@@ -9,7 +9,6 @@ const JAMAICA = 'Ямайка';
 let message;
 let price = 0;
 let country;
-
 if (countryName === null) {
   message = CANCELED_BY_USER;
 } else {
@@ -30,15 +29,11 @@ if (countryName === null) {
       break;
     default:
       price = 0;
+      message = NO_DELIVERY;
   }
 }
-
 if (price > 0) { // Write code on this line
   message = `Доставка в ${country} будет стоить ${price} кредитов`;
-} else if(countryName === null){
-  message = CANCELED_BY_USER;
-} else{
-  message = NO_DELIVERY;
 }
 
 console.log(message);
@@ -54,3 +49,4 @@ console.log(message);
 //если countryName равно "Чили"
 // то значение message будет равно
 // 'В выбранную страну доставка недоступна.'
+
